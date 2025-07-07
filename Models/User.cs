@@ -16,6 +16,9 @@ namespace RTC.Models
     [Column("email")]
     public string Email { get; set; }
 
+    [Column("nickname")]
+    public string NickName { get; set; }
+
     [Column("phoneno")]
     public string PhoneNo { get; set; }
 
@@ -31,7 +34,15 @@ namespace RTC.Models
     [Column("password")]
     public string Password { get; set; }
 
-    [Column("role")]
-    public string Role { get; set; }
+    [Column("bio")]
+    public string Bio { get; set; }
+
+    [Column("status")]
+    public string Status {get;set;}
+
+    [Column("removed")]
+    public bool Removed { get;set; }
+
+
   }
 }

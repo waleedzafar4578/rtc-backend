@@ -11,8 +11,10 @@ using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 var connectionString = builder.Configuration.GetConnectionString("connectionString");
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(connectionString));
+
 
 
 var secretKey = Encoding.ASCII.GetBytes(Settings.Secret);
@@ -30,7 +32,6 @@ builder.Services.AddAuthentication(builder =>
         IssuerSigningKey = new SymmetricSecurityKey(secretKey),
         ValidateIssuer = false,
         ValidateAudience = false,
-        // RoleClaimType = ClaimTypes.Role
     };
 });
 

@@ -12,7 +12,6 @@ namespace RTC.Services {
       var tokenDescriptor = new SecurityTokenDescriptor{
         Subject = new ClaimsIdentity(new Claim[]{
           new (ClaimTypes.Name, user.Username.ToString()),
-          // new (ClaimTypes.Role, user.Role)
         }),
         Expires = DateTime.UtcNow.AddHours(2),
         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKey), SecurityAlgorithms.HmacSha256Signature),
